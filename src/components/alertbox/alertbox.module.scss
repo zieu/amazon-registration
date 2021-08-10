@@ -1,0 +1,28 @@
+.alertbox {
+	background-color: #fff;
+	box-shadow: none;
+	padding: 14px 18px;
+	border-radius: 4px;
+	border: 1px #d33 solid;
+	display: flex;
+	align-items: flex-start;
+	img {
+		width: 30px;
+		margin-right: 30px;
+	}
+	h3 {
+		color: #d33;
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 1.255;
+		padding-bottom: 4px;
+	}
+	ul {
+		list-style-position: inside;
+		li {
+			font-size: 13px;
+			line-height: 19px;
+			color: #111;
+		}
+	}
+}
