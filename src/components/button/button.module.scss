@@ -1,18 +1,18 @@
 .button {
-	background: #29a1f1;
-	background: -webkit-linear-gradient(top, #29a1f1, #1383b3);
-	background: linear-gradient(to bottom, #29a1f1, #1383b3);
-	border-radius: 3px;
-	width: 100%;
-	color: #fff;
-	height: 32px;
-	border-color: #adb1b8 #a2a6ac #8d9096;
-	border-style: solid;
-	border-width: 1px;
-	cursor: pointer;
-	&:hover {
-		border-color: #18b;
-		background: -webkit-linear-gradient(top, #2f8dcc, #0e6e97);
-		background: linear-gradient(to bottom, #2f8dcc, #0e6e97);
-	}
+  background: #29a1f1;
+  background: -webkit-linear-gradient(top, #29a1f1, #1383b3);
+  background: linear-gradient(to bottom, #29a1f1, #1383b3);
+  border-radius: 3px;
+  width: 100%;
+  color: #fff;
+  height: 32px;
+  border-color: #adb1b8 #a2a6ac #8d9096;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  &:hover {
+    border-color: #18b;
+    background: -webkit-linear-gradient(top, #2f8dcc, #0e6e97);
+    background: linear-gradient(to bottom, #2f8dcc, #0e6e97);
+  }
 }
