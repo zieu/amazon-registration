@@ -1,5 +1,24 @@
-.label {
-}
+.container {
+	margin-bottom: 14px;
+	.label {
+		display: block;
+		padding-left: 2px;
+		padding-bottom: 2px;
+		font-weight: 700;
+		font-size: 13px;
+		line-height: 19px;
+		color: #111;
+	}
 
-.input {
+	.input {
+		background-color: #fff;
+		height: 31px;
+		padding: 3px 7px;
+		line-height: normal;
+		border: 1px solid #a6a6a6;
+		border-top-color: #949494;
+		border-radius: 3px;
+		box-shadow: none;
+		outline: 0;
+	}
 }
