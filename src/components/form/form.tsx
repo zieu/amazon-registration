@@ -53,7 +53,7 @@ const Form = () => {
           info="Passwords must be at least 6 characters."
         />
         <Input {...register("passwordConfirm")} label="Re-enter password" type="password" />
-        <Button>Create your Amazon account</Button>
+        <Button type="submit">Create your Amazon account</Button>
         <p className={classes.paragraph}>
           By creating an account, you agree to Amazon's <br />
           <a href="/">Conditions of Use</a> and <a href="/">Privacy Notice</a>.
