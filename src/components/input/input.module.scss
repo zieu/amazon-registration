@@ -21,4 +21,16 @@
 		box-shadow: none;
 		outline: 0;
 	}
+
+	.info {
+		margin-top: 5px;
+		text-align: left;
+		font-size: 12px;
+		line-height: 15px;
+		display: flex;
+		align-items: flex-end;
+		img {
+			margin-right: 5px;
+		}
+	}
 }
