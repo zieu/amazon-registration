@@ -1,9 +1,9 @@
-import { AlertBox, Button, Input } from "components";
 import classes from "./form.module.scss";
+import { useEffect, useState } from "react";
+import { AlertBox, Button, Input } from "components";
 import { FieldError, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useEffect, useState } from "react";
 
 type Values = {
 	name: string;
@@ -21,6 +21,7 @@ const schema = yup.object().shape({
 
 const Form = () => {
 	const [problems, setProblems] = useState<Array<FieldError | undefined>>([]);
+	const [result, setResult] = useState<Values>();
 	const {
 		register,
 		handleSubmit,
@@ -28,7 +29,7 @@ const Form = () => {
 	} = useForm<Values>({ resolver: yupResolver(schema) });
 
 	const onSubmit = (values: Values) => {
-		console.log(values);
+		setResult(values);
 	};
 
 	useEffect(() => {
@@ -62,6 +63,13 @@ const Form = () => {
 					Already have an account? <a href="/">Sign-In ›</a>
 				</p>
 			</form>
+			{result && !problems.some((p) => !!p) && (
+				<div className={classes.result}>
+					<div>
+						<pre>{JSON.stringify(result, null, 2)}</pre>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 };

@@ -28,4 +28,17 @@
 			color: #111;
 		}
 	}
+	.result {
+		width: 348px;
+		border: 1px solid rgb(32, 143, 88);
+		word-wrap: break-word;
+		padding: 14px;
+		border-radius: 3px;
+		margin-top: 10px;
+		font-size: 14px;
+		line-height: 18px;
+		pre {
+			font-family: monospace !important;
+		}
+	}
 }
