@@ -19,9 +19,13 @@ const Form = () => {
 				/>
 				<Input label="Re-enter password" type="passwordConfirm" />
 				<Button>Create your Amazon account</Button>
-				<p className={classes.agreement}>
+				<p className={classes.paragraph}>
 					By creating an account, you agree to Amazon's <br />
 					<a href="/">Conditions of Use</a> and <a href="/">Privacy Notice</a>.
+				</p>
+				<div className="divider" style={{ marginTop: 18 }}></div>
+				<p className={classes.option}>
+					Already have an account? <a href="/">Sign-In ›</a>
 				</p>
 			</form>
 		</div>

@@ -1,0 +1,15 @@
+.footer {
+	margin: 26px auto;
+	font-size: 11px;
+	.links {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		margin-bottom: 10px;
+	}
+	.copy {
+		text-align: center;
+		color: #555;
+	}
+}

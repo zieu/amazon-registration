@@ -15,10 +15,17 @@
 			display: block;
 			width: 100%;
 		}
-		.agreement {
+		button {
+			margin-bottom: 18px;
+		}
+		.paragraph {
 			font-size: 12px;
 			line-height: 1.5;
-			margin-top: 18px;
+		}
+		.option {
+			font-size: 13px;
+			line-height: 19px;
+			color: #111;
 		}
 	}
 }
