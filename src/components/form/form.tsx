@@ -15,7 +15,7 @@ type Values = {
 const schema = yup.object().shape({
   name: yup.string().required(),
   email: yup.string().email().required("Enter your email"),
-  password: yup.string().required("Enter your password").min(6, "Password is too small"),
+  password: yup.string().required("Enter your password").min(6, "Password is too short"),
   passwordConfirm: yup.string().oneOf([yup.ref("password"), null], "Passwords must match"),
 });
 
