@@ -1,23 +1,57 @@
 import { AlertBox, Button, Input } from "components";
 import classes from "./form.module.scss";
+import { FieldError, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { useEffect, useState } from "react";
 
-const probs = ["prob1", "prob2"];
+type Values = {
+	name: string;
+	email: string;
+	password: string;
+	passwordConfirm: string;
+};
+
+const schema = yup.object().shape({
+	name: yup.string().required(),
+	email: yup.string().email().required("Enter your email"),
+	password: yup.string().required("Enter your password").min(6, "Password is too small"),
+	passwordConfirm: yup.string().oneOf([yup.ref("password"), null], "Passwords must match"),
+});
 
 const Form = () => {
+	const [problems, setProblems] = useState<Array<FieldError | undefined>>([]);
+	const {
+		register,
+		handleSubmit,
+		formState: { errors, isSubmitted },
+	} = useForm<Values>({ resolver: yupResolver(schema) });
+
+	const onSubmit = (values: Values) => {
+		console.log(values);
+	};
+
+	useEffect(() => {
+		if (errors && isSubmitted) {
+			setProblems([errors.email, errors.name, errors.password, errors.passwordConfirm]);
+		}
+	}, [isSubmitted, errors]);
+
 	return (
 		<div className={classes.container}>
-			<AlertBox problemsList={probs} />
-			<form className={classes.form}>
+			{isSubmitted && problems.some((p) => !!p) && <AlertBox problemsList={problems} />}
+			<form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
 				<h1 className={classes.title}>Create account</h1>
-				<Input label="Your name" type="text" />
-				<Input label="Email" type="email" />
+				<Input {...register("name")} label="Your name" type="text" />
+				<Input {...register("email")} label="Email" type="email" />
 				<Input
+					{...register("password")}
 					label="Password"
 					type="password"
 					placeholder="At least 6 characters"
 					info="Passwords must be at least 6 characters."
 				/>
-				<Input label="Re-enter password" type="passwordConfirm" />
+				<Input {...register("passwordConfirm")} label="Re-enter password" type="password" />
 				<Button>Create your Amazon account</Button>
 				<p className={classes.paragraph}>
 					By creating an account, you agree to Amazon's <br />
